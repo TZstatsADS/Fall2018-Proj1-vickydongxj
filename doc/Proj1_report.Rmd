@@ -1,0 +1,48 @@
+---
+title: "Does Age Affect Happiness? Are There Gender Differences in the Effect?"
+author: 'Xiaojing Dong UNI: xd2195'
+output:
+  html_document:
+    df_print: paged
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r load libraries, echo=FALSE, warning=FALSE, message=FALSE}
+# packages.used=c("rvest", "tibble", "qdap", "sentimentr", "gplots", "dplyr",
+#                 "tm", "syuzhet", "factoextra", "beeswarm", "scales", 
+#                 "RColorBrewer", "RANN", "tm", "topicmodels")
+packages.used=c("tm", "tidytext", "tidyverse", "DT")
+
+# check packages that need to be installed.
+packages.needed=setdiff(packages.used, 
+                        intersect(installed.packages()[,1], 
+                                  packages.used))
+
+# install additional packages
+if(length(packages.needed)>0){
+  install.packages(packages.needed, dependencies = TRUE)
+}
+
+# load packages
+library(tm)
+library(tidytext)
+library(tidyverse)
+library(DT)
+
+# library(rvest)
+# library(tibble)
+# library(qdap)
+# library(sentimentr)
+# library(gplots)
+# library(dplyr)
+# library(syuzhet)
+# library(factoextra)
+# library(beeswarm)
+# library(scales)
+# library(RColorBrewer)
+# library(RANN)
+# library(topicmodels)
+```
